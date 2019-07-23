@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    {% for user in user_list %}
+        <p>
+            {{ user }}
+            <a href="{% url 'app:week_with_schedule' user.pk %}">週間カレンダー</a>
+            <a href="{% url 'app:month_with_schedule' user.pk %}">月間カレンダー</a>
+            <a href="{% url 'app:mycalendar' user.pk %}">週間・月間・登録カレンダー</a>
+            <a href="{% url 'app:month_with_forms' user.pk %}">一括編集カレンダー</a>
+        </p>
+    {% endfor %}
+{% endblock %}
